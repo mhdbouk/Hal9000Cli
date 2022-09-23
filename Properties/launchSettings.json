@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Hal9000Cli": {
+      "commandName": "Project",
+      "commandLineArgs": ""
+    }
+  }
+}
