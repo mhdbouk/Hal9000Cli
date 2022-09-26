@@ -7,11 +7,17 @@ using System.Threading.Tasks;
 
 namespace Hal9000Cli
 {
-    [Command(Name = "todo", Description = "Manage to Todo (Create, Update, and Query)")]
+    [Command(Name = "todo", Description = "Manage Todo Items (Create, Update, and List)")]
+    [Subcommand(
+        typeof(CreateTodoItemCmd),
+        typeof(UpdateTodoItemCmd),
+        typeof(QueryTodoItemCmd)
+    )]
     public class TodoCmd
     {
         protected Task<int> OnExecute(CommandLineApplication app)
         {
+            app.ShowHelp();
             return Task.FromResult(0);
         }
     }
