@@ -17,7 +17,9 @@ namespace Hal9000Cli
         {
             var displayTitle = new WenceyWang.FIGlet.AsciiArt("HAL9000");
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(displayTitle.ToString());
+            Console.ResetColor();
             Console.WriteLine();
 
             app.ShowHelp();
