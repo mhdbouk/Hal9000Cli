@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text.Json;
 
-namespace Hal9000Cli.Todo
-{
+namespace Hal9000Cli.Todo;
+
 public class TodoService
 {
     private readonly string _databasePath = $"{System.IO.Path.GetTempPath()}/data.json";
@@ -14,7 +14,7 @@ public class TodoService
         {
             File.WriteAllText(_databasePath, "[]");
         }
-            
+
         Refresh();
     }
 
@@ -77,7 +77,7 @@ public class TodoService
     {
         var data = File.ReadAllText(_databasePath);
         _items = JsonSerializer.Deserialize<List<TodoItem>>(data)!;
-        if(_items == null)
+        if (_items == null)
         {
             _items = new();
         }
@@ -95,6 +95,5 @@ public class TodoService
         Refresh();
         return _items.FirstOrDefault(x => x.Id == id);
     }
-}
 }
 

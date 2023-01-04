@@ -2,12 +2,12 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Authors>Mohamad Dbouk</Authors>
         <Product>Hal9000</Product>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <AssemblyName>hal9000</AssemblyName>
     </PropertyGroup>
 
@@ -29,9 +29,9 @@
       <Folder Include="Todo\" />
     </ItemGroup>
 <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition=" '$(OS)' == 'Windows_NT' ">
-	<Exec Command="xcopy &quot;$(SolutionDir)\bin\Debug\net6.0&quot; &quot;C:\Hal9000\&quot;  /Y /I /E" />
+	<Exec Command="xcopy &quot;$(SolutionDir)\bin\Debug\net7.0&quot; &quot;C:\Hal9000\&quot;  /Y /I /E" />
 </Target>
 <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition=" '$(OS)' != 'Windows_NT' ">
-	<Exec Command="cp $(SolutionDir)/bin/Debug/net6.0/* /Users/mohamaddbouk/Hal9000" />
+	<Exec Command="cp $(SolutionDir)/bin/Debug/net7.0/* /Users/mohamaddbouk/Hal9000" />
 </Target>
 </Project>

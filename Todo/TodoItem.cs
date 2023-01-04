@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text.Json;
 
-namespace Hal9000Cli.Todo
-{
+namespace Hal9000Cli.Todo;
+
 public class TodoItem
 {
     public int Id { get; set; }
@@ -18,5 +18,3 @@ public class TodoItem
         return JsonSerializer.Serialize(this, options);
     }
 }
-}
-
